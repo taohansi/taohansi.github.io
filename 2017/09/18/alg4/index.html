@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://taohansi.github.io">
-  <title>java总结 | tao hansi的博客</title>
+  <title>tao hansi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于一些code的总结">
-<meta name="keywords" content="java,alogrithms">
+  <meta name="description" content="这两天在刷alogrithms,知识点总结如下 java类 java含有基础类库JFC,包括  java.lang 基础包，不需要导入 java.awt GUI javax.swing GUI java.io 数据流输入输出 java.util 数据结构等 java.net 网络开发 java.applet 开发applet程序其中pakage中又含有许多类，类中提供api  java stati">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java总结">
+<meta property="og:title" content="tao hansi的博客">
 <meta property="og:url" content="http://taohansi.github.io/2017/09/18/alg4/index.html">
 <meta property="og:site_name" content="tao hansi的博客">
-<meta property="og:description" content="关于一些code的总结">
+<meta property="og:description" content="这两天在刷alogrithms,知识点总结如下 java类 java含有基础类库JFC,包括  java.lang 基础包，不需要导入 java.awt GUI javax.swing GUI java.io 数据流输入输出 java.util 数据结构等 java.net 网络开发 java.applet 开发applet程序其中pakage中又含有许多类，类中提供api  java stati">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-18T15:50:40.546Z">
+<meta property="og:updated_time" content="2017-09-18T15:59:42.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java总结">
-<meta name="twitter:description" content="关于一些code的总结">
+<meta name="twitter:title" content="tao hansi的博客">
+<meta name="twitter:description" content="这两天在刷alogrithms,知识点总结如下 java类 java含有基础类库JFC,包括  java.lang 基础包，不需要导入 java.awt GUI javax.swing GUI java.io 数据流输入输出 java.util 数据结构等 java.net 网络开发 java.applet 开发applet程序其中pakage中又含有许多类，类中提供api  java stati">
   
     <link rel="alternative" href="/atom.xml" title="tao hansi的博客" type="application/atom+xml">
   
@@ -158,27 +157,10 @@
             <article id="post-alg4" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      java总结
-    </h1>
-  
-
-        
-        <a href="/2017/09/18/alg4/" class="archive-article-date">
-  	<time datetime="2017-09-18T07:41:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>   关于一些code的总结</p>
-<a id="more"></a>
-<p>这两天在刷alogrithms,知识点总结如下</p>
-<p>##java类<br> java含有基础类库JFC,包括</p>
+        <p>这两天在刷alogrithms,知识点总结如下</p>
+<h2 id="java类"><a href="#java类" class="headerlink" title="java类"></a>java类</h2><p> java含有基础类库JFC,包括</p>
 <ol>
 <li>java.lang <em>基础包，不需要导入</em></li>
 <li>java.awt <em>GUI</em></li>
@@ -186,22 +168,18 @@
 <li>java.io <em>数据流输入输出</em></li>
 <li>java.util <em>数据结构等</em></li>
 <li>java.net <em>网络开发</em></li>
-<li><p>java.applet <em>开发applet程序</em></p>
-<p>其中pakage中又含有许多类，类中提供api</p>
-</li>
+<li>java.applet <em>开发applet程序</em><br>其中pakage中又含有许多类，类中提供api</li>
 </ol>
-<p>##java static</p>
-<ol>
+<h2 id="java-static"><a href="#java-static" class="headerlink" title="java static"></a>java static</h2><ol>
 <li>成员变量修饰为<code>static</code> 不依赖于对象 拥有唯一的内存空间 自己初始化 但使用时常用<code>private</code>防止从外界修改</li>
 <li>成员方法修饰为<code>static</code> 不依赖于对象 可以使用<strong>类名.方法名</strong>进行调用避免<code>new</code>出对象 只能调用静态的变量与方法</li>
 </ol>
-<p>##java 程序<br>有了上面的知识就很容易理解示例中的 <code>public static void main(String[] args)</code>了</p>
+<h2 id="java-程序"><a href="#java-程序" class="headerlink" title="java 程序"></a>java 程序</h2><p>有了上面的知识就很容易理解示例中的 <code>public static void main(String[] args)</code>了</p>
 <ol>
 <li>main()是程序入口 不能依赖于对象存在 没有返回值 所以<code>public static void main</code> <em>编译器默认main参数为空，但可以修改配置添加参数</em></li>
 <li>调用的方法相应也要写成<code>public static</code>否则无法被调用</li>
 </ol>
-<p>##algorithms</p>
-<ol>
+<h2 id="algorithms"><a href="#algorithms" class="headerlink" title="algorithms"></a>algorithms</h2><ol>
 <li>调用有返回值的递归时记得 return f(a,b) 否则无法在原程序中return</li>
 <li>多个if并列注意会依次执行下去判断条件 若想只执行其中一个后停止应采用if{…} else if{…}</li>
 <li><p>两段代码的比较</p>
@@ -220,21 +198,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">alogrithms</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -425,14 +388,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">alogrithms</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
