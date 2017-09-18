@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://taohansi.github.io">
-  <title>Archives: 2017/9 | tao hansi的博客</title>
+  <title>java总结 | tao hansi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="弱菜，经常被虐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tao hansi的博客">
-<meta property="og:url" content="http://taohansi.github.io/archives/2017/09/index.html">
+  <meta name="description" content="关于一些code的总结">
+<meta name="keywords" content="java,alogrithms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java总结">
+<meta property="og:url" content="http://taohansi.github.io/2017/09/18/alg4/index.html">
 <meta property="og:site_name" content="tao hansi的博客">
-<meta property="og:description" content="弱菜，经常被虐">
+<meta property="og:description" content="关于一些code的总结">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2017-09-18T15:37:50.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tao hansi的博客">
-<meta name="twitter:description" content="弱菜，经常被虐">
+<meta name="twitter:title" content="java总结">
+<meta name="twitter:description" content="关于一些code的总结">
   
     <link rel="alternative" href="/atom.xml" title="tao hansi的博客" type="application/atom+xml">
   
@@ -153,36 +155,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-alg4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/18/alg4/" class="archive-article-date">
-  	<time datetime="2017-09-18T07:41:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/18/alg4/">java总结</a>
+    <h1 class="article-title" itemprop="name">
+      java总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/09/18/alg4/" class="archive-article-date">
+  	<time datetime="2017-09-18T07:41:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   关于一些code的总结</p>
+<a id="more"></a>
+<pre><code>这两天在刷alogrithms,知识点总结如下
+
+##java类
+ java含有基础类库JFC,包括
+ 1. java.lang _基础包，不需要导入_
+ 2. java.awt _GUI_
+ 3. javax.swing _GUI_
+ 4. java.io _数据流输入输出_
+ 5. java.util _数据结构等_
+ 6. java.net _网络开发_
+ 7. java.applet _开发applet程序_
+
+ 其中pakage中又含有许多类，类中提供api
+
+##java static
+1. 成员变量修饰为`static` 不依赖于对象 拥有唯一的内存空间 自己初始化 但使用时常用`private`防止从外界修改
+2. 成员方法修饰为`static` 不依赖于对象 可以使用**类名.方法名**进行调用避免`new`出对象 只能调用静态的变量与方法
+
+##java 程序
+有了上面的知识就很容易理解示例中的 `public static void main(String[] args)`了
+1. main()是程序入口 不能依赖于对象存在 没有返回值 所以`public static void main` _编译器默认main参数为空，但可以修改配置添加参数_
+2. 调用的方法相应也要写成`public static `否则无法被调用
+
+##algorithms
+1. 调用有返回值的递归时记得 return f(a,b) 否则无法在原程序中return
+2. 多个if并列注意会依次执行下去判断条件 若想只执行其中一个后停止应采用if{...} else if{...}
+3. 两段代码的比较
+
+ A
+
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">binomial</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> num=<span class="number">11</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> knum=<span class="number">6</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">double</span>[][] a=<span class="keyword">new</span> <span class="keyword">double</span> [num][knum];</div><div class="line"></div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> c=<span class="number">0</span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">B</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> k,<span class="keyword">double</span> p)</span></span>&#123;</div><div class="line">        c++;</div><div class="line">        System.out.println(c);</div><div class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>&amp;&amp;k==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1.0</span>;</div><div class="line">        <span class="keyword">if</span>(n&lt;<span class="number">0</span>||k&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">        <span class="keyword">if</span>(a[n][k]==<span class="number">0</span>)</div><div class="line">            a[n][k]=(<span class="number">1.0</span>-p)*B(n-<span class="number">1</span>,k,p)+p*B(n-<span class="number">1</span>,k-<span class="number">1</span>,p);</div><div class="line">        <span class="keyword">return</span> a[n][k];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">double</span> num=B(<span class="number">10</span>,<span class="number">5</span>,<span class="number">0.5</span>);</div><div class="line">        System.out.println(num);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+B
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">binomial</span> </span>&#123;</div><div class="line">    <span class="comment">/*static int num=101;</span></div><div class="line"><span class="comment">    static int knum=51;</span></div><div class="line"><span class="comment">    static double[][] a=new double [num][knum];*/</span></div><div class="line"></div><div class="line"> <span class="keyword">static</span> <span class="keyword">int</span> c=<span class="number">0</span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">B</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> k,<span class="keyword">double</span> p)</span></span>&#123;</div><div class="line">        <span class="keyword">double</span> [][] a=<span class="keyword">new</span> <span class="keyword">double</span>[n+<span class="number">1</span>][k+<span class="number">1</span>];</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k+<span class="number">1</span>;j++)</div><div class="line">                a[i][j]=-<span class="number">1</span>;</div><div class="line">        <span class="keyword">return</span> B(a,n,k,p);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">B</span><span class="params">(<span class="keyword">double</span>[][] a,<span class="keyword">int</span> n,<span class="keyword">int</span> k ,<span class="keyword">double</span> p)</span></span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>&amp;&amp;k==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1.0</span>;</div><div class="line">        <span class="keyword">if</span>(n&lt;<span class="number">0</span>||k&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">        <span class="keyword">if</span>(a[n][k]==-<span class="number">1</span>) &#123; c++;</div><div class="line">            System.out.println(c);</div><div class="line">            a[n][k] = (<span class="number">1.0</span> - p) * B(a, n - <span class="number">1</span>, k, p) + p * B(a, n - <span class="number">1</span>, k - <span class="number">1</span>, p);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> a[n][k];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">double</span> num=B(<span class="number">100</span>,<span class="number">50</span>,<span class="number">0.5</span>);</div><div class="line">        System.out.println(num);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p> 困。。。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,137 +236,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://taohansi.github.io/2017/09/18/alg4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/14/bug/" class="archive-article-date">
-  	<time datetime="2017-09-14T15:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/14/bug/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">配置yillia主题遇到的小问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/14/bug/">配置yillia主题遇到的小问题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bug</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/13/small-function/" class="archive-article-date">
-  	<time datetime="2017-09-13T07:19:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/13/small-function/">从cousrea视频看不了说起</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小功能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/12/my-first-blog/" class="archive-article-date">
-  	<time datetime="2017-09-12T08:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/12/my-first-blog/">我的第一篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -351,8 +358,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
