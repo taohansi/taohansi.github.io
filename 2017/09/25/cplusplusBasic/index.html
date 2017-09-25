@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://taohansi.github.io">
-  <title>Archives | tao hansi的博客</title>
+  <title>cplusplusBasic | tao hansi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="弱菜，经常被虐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tao hansi的博客">
-<meta property="og:url" content="http://taohansi.github.io/archives/index.html">
+  <meta name="description" content="c++基础日常">
+<meta name="keywords" content="c++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cplusplusBasic">
+<meta property="og:url" content="http://taohansi.github.io/2017/09/25/cplusplusBasic/index.html">
 <meta property="og:site_name" content="tao hansi的博客">
-<meta property="og:description" content="弱菜，经常被虐">
+<meta property="og:description" content="c++基础日常">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2017-09-25T09:36:54.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tao hansi的博客">
-<meta name="twitter:description" content="弱菜，经常被虐">
+<meta name="twitter:title" content="cplusplusBasic">
+<meta name="twitter:description" content="c++基础日常">
   
     <link rel="alternative" href="/atom.xml" title="tao hansi的博客" type="application/atom+xml">
   
@@ -153,36 +155,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-cplusplusBasic" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/25/cplusplusBasic/" class="archive-article-date">
-  	<time datetime="2017-09-25T08:49:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/cplusplusBasic/">cplusplusBasic</a>
+    <h1 class="article-title" itemprop="name">
+      cplusplusBasic
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/09/25/cplusplusBasic/" class="archive-article-date">
+  	<time datetime="2017-09-25T08:49:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   c++基础日常<br><a id="more"></a></p>
+<h3 id="c-类型转换"><a href="#c-类型转换" class="headerlink" title="c++类型转换"></a>c++类型转换</h3><ol>
+<li><code>static_cast</code>正常情况下的类型转换</li>
+<li><code>const_cast</code><br>c++并没有像java一样有方便的类型转换，比较好的方法是<code>stringStream</code></li>
+</ol>
+<ul>
+<li>需要包含<code>&lt;sstream&gt;</code>库<br>简单例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">stringstream stream;</div><div class="line">string result=&quot;123&quot;;</div><div class="line">int n=0;</div><div class="line">stream&lt;&lt;result;</div><div class="line">stream&gt;&gt;n;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果要多次重用</p>
+<ul>
+<li><code>.clear()</code>重置<code>stringstream</code>的标志状态</li>
+<li>用<code>stream.str(&quot;&quot;)</code>清空内存</li>
+</ul>
+<p>模板例子<br><figure class="highlight plain"><figcaption><span>out_type,class in_type></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">out_type convert(const in_type &amp;t)</div><div class="line">&#123;</div><div class="line">stringstream stream;</div><div class="line">stream&lt;&lt;t;</div><div class="line">out_type result;</div><div class="line">stream&gt;&gt;result;</div><div class="line">return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="c-继承"><a href="#c-继承" class="headerlink" title="c++继承"></a>c++继承</h3><ul>
+<li>子类调用父类的构造函数 <code>basePlusClass(...paramList...):baseClass(...paramLst)</code></li>
+<li>子类调用父类的函数或者数据成员<code>baseClass::function()</code>or<code>baseClass::data</code></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -194,297 +213,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://taohansi.github.io/2017/09/25/cplusplusBasic/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/22/java-basic/" class="archive-article-date">
-  	<time datetime="2017-09-22T04:42:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/22/java-basic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/22/java-basic/">java基础</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/20/vocabulary/" class="archive-article-date">
-  	<time datetime="2017-09-20T13:16:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/20/vocabulary/">vocabulary</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">english</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/20/alg4-martix/" class="archive-article-date">
-  	<time datetime="2017-09-20T05:01:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/20/alg4-martix/">java小总结(二)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">alogrithms</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/18/alg4/" class="archive-article-date">
-  	<time datetime="2017-09-18T15:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/18/alg4/">java小总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">alogrithms</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/14/bug/" class="archive-article-date">
-  	<time datetime="2017-09-14T15:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/14/bug/">配置yillia主题遇到的小问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bug</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/13/small-function/" class="archive-article-date">
-  	<time datetime="2017-09-13T07:19:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/13/small-function/">从cousrea视频看不了说起</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小功能</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/12/my-first-blog/" class="archive-article-date">
-  	<time datetime="2017-09-12T08:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/12/my-first-blog/">我的第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -507,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
