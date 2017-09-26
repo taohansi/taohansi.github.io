@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="tao hansi的博客">
 <meta property="og:description" content="c++基础日常">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-25T09:36:54.906Z">
+<meta property="og:updated_time" content="2017-09-26T09:03:45.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cplusplusBasic">
 <meta name="twitter:description" content="c++基础日常">
@@ -181,7 +181,7 @@
 <li><code>const_cast</code><br>c++并没有像java一样有方便的类型转换，比较好的方法是<code>stringStream</code></li>
 </ol>
 <ul>
-<li>需要包含<code>&lt;sstream&gt;</code>库<br>简单例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">stringstream stream;</div><div class="line">string result=&quot;123&quot;;</div><div class="line">int n=0;</div><div class="line">stream&lt;&lt;result;</div><div class="line">stream&gt;&gt;n;</div></pre></td></tr></table></figure>
+<li>需要包含<code>&lt;sstream&gt;</code>库<br>简单例子<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> stream;</div><div class="line"><span class="built_in">string</span> result=<span class="string">"123"</span>;</div><div class="line"><span class="keyword">int</span> n=<span class="number">0</span>;</div><div class="line">stream&lt;&lt;result;</div><div class="line">stream&gt;&gt;n;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>如果要多次重用</p>
@@ -189,10 +189,12 @@
 <li><code>.clear()</code>重置<code>stringstream</code>的标志状态</li>
 <li>用<code>stream.str(&quot;&quot;)</code>清空内存</li>
 </ul>
-<p>模板例子<br><figure class="highlight plain"><figcaption><span>out_type,class in_type></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">out_type convert(const in_type &amp;t)</div><div class="line">&#123;</div><div class="line">stringstream stream;</div><div class="line">stream&lt;&lt;t;</div><div class="line">out_type result;</div><div class="line">stream&gt;&gt;result;</div><div class="line">return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="c-继承"><a href="#c-继承" class="headerlink" title="c++继承"></a>c++继承</h3><ul>
+<p>模板例子<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">out_type</span>,<span class="title">class</span> <span class="title">in_type</span>&gt;</span></div><div class="line"><span class="class"><span class="title">out_type</span> <span class="title">convert</span>(<span class="title">const</span> <span class="title">in_type</span> &amp;<span class="title">t</span>)</span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="built_in">stringstream</span> stream;</div><div class="line">stream&lt;&lt;t;</div><div class="line">out_type result;</div><div class="line">stream&gt;&gt;result;</div><div class="line"><span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="c-继承与多态"><a href="#c-继承与多态" class="headerlink" title="c++继承与多态"></a>c++继承与多态</h3><ul>
 <li>子类调用父类的构造函数 <code>basePlusClass(...paramList...):baseClass(...paramLst)</code></li>
 <li>子类调用父类的函数或者数据成员<code>baseClass::function()</code>or<code>baseClass::data</code></li>
+<li>派生类对象的地址是能够赋值给父类对象的指针，而把基类指针进行强制类型转换也是允许的</li>
+<li>当重载函数不是虚函数时，调用哪个版本的成员函数根据的是指针的类型。而当重载函数是虚函数是，调用哪个版本的函数根据的是指针所指向的对象的类型</li>
 </ul>
 
       
@@ -413,15 +415,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">english</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
