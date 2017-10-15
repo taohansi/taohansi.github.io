@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://taohansi.github.io">
-  <title>cplusplusBasic | tao hansi的博客</title>
+  <title>c++基础复习 | tao hansi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="c++基础日常">
 <meta name="keywords" content="c++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cplusplusBasic">
+<meta property="og:title" content="c++基础复习">
 <meta property="og:url" content="http://taohansi.github.io/2017/09/25/cplusplusBasic/index.html">
 <meta property="og:site_name" content="tao hansi的博客">
 <meta property="og:description" content="c++基础日常">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-26T09:03:45.755Z">
+<meta property="og:updated_time" content="2017-09-26T09:26:42.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cplusplusBasic">
+<meta name="twitter:title" content="c++基础复习">
 <meta name="twitter:description" content="c++基础日常">
   
     <link rel="alternative" href="/atom.xml" title="tao hansi的博客" type="application/atom+xml">
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      cplusplusBasic
+      c++基础复习
     </h1>
   
 
@@ -177,8 +177,7 @@
       
         <p>   c++基础日常<br><a id="more"></a></p>
 <h3 id="c-类型转换"><a href="#c-类型转换" class="headerlink" title="c++类型转换"></a>c++类型转换</h3><ol>
-<li><code>static_cast</code>正常情况下的类型转换</li>
-<li><code>const_cast</code><br>c++并没有像java一样有方便的类型转换，比较好的方法是<code>stringStream</code></li>
+<li><code>static_cast</code>正常情况下的类型转换<br>c++并没有像java一样有<code>string</code>类型方便的类型转换，比较好的方法是<code>stringStream</code></li>
 </ol>
 <ul>
 <li>需要包含<code>&lt;sstream&gt;</code>库<br>简单例子<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> stream;</div><div class="line"><span class="built_in">string</span> result=<span class="string">"123"</span>;</div><div class="line"><span class="keyword">int</span> n=<span class="number">0</span>;</div><div class="line">stream&lt;&lt;result;</div><div class="line">stream&gt;&gt;n;</div></pre></td></tr></table></figure>
@@ -195,6 +194,7 @@
 <li>子类调用父类的函数或者数据成员<code>baseClass::function()</code>or<code>baseClass::data</code></li>
 <li>派生类对象的地址是能够赋值给父类对象的指针，而把基类指针进行强制类型转换也是允许的</li>
 <li>当重载函数不是虚函数时，调用哪个版本的成员函数根据的是指针的类型。而当重载函数是虚函数是，调用哪个版本的函数根据的是指针所指向的对象的类型</li>
+<li>声明为纯虚函数<code>virtual type name() =0</code>不具备函数功能，不能被调用，必须在派生类中实例化</li>
 </ul>
 
       
@@ -415,7 +415,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -423,15 +431,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小功能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

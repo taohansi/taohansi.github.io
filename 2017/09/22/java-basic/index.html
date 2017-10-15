@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="tao hansi的博客">
 <meta property="og:description" content="一些与c++的不同要点">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-25T01:10:47.629Z">
+<meta property="og:updated_time" content="2017-10-02T09:15:02.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础">
 <meta name="twitter:description" content="一些与c++的不同要点">
@@ -211,10 +211,25 @@ for(...){
 <li>java的重载仍然具有二义性</li>
 </ul>
 <h3 id="java-继承"><a href="#java-继承" class="headerlink" title="java 继承"></a>java 继承</h3><ul>
-<li>java仅支持单继承</li>
+<li>java仅支持单继承（其他与c++类似）</li>
 </ul>
 <h3 id="java-封装"><a href="#java-封装" class="headerlink" title="java 封装"></a>java 封装</h3><ul>
 <li>当类不加任何访问权限时成员属于<code>default</code>状态，可以被类本身和同一个包中的类访问</li>
+</ul>
+<h3 id="java-final"><a href="#java-final" class="headerlink" title="java final"></a>java final</h3><ul>
+<li>方法声明为<code>final</code>，不允许继承</li>
+<li>类声明为<code>final</code>,类不允许继承，当然方法也同样不被允许继承</li>
+</ul>
+<h3 id="java-接口"><a href="#java-接口" class="headerlink" title="java 接口"></a>java 接口</h3><p><code>interfa</code>是一个抽象类型，是抽象方法的集合，类可以实现接口的抽象方法，类需要实现该接口的所有方法，接口无法被实例化，但可以实现</p>
+<ul>
+<li>接口可以被继承，支持多继承</li>
+<li>声明为<code>public abstract</code></li>
+<li>类里面可以声明<code>public |static | final</code>修饰变量</li>
+</ul>
+<h3 id="java-包"><a href="#java-包" class="headerlink" title="java 包"></a>java 包</h3><p>包是相关类和接口的集合</p>
+<ul>
+<li>声明<code>package pacagename</code></li>
+<li>如果存在二义性，则采用如<br><code>java.util.Timer timer= new java.util.Timer</code></li>
 </ul>
 
       
@@ -303,7 +318,7 @@ for(...){
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          cplusplusBasic
+          c++基础复习
         
       </div>
     </a>
@@ -444,7 +459,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,15 +475,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小功能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
