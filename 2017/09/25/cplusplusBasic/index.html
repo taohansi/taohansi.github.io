@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="tao hansi的博客">
 <meta property="og:description" content="c++基础日常">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-26T09:26:42.015Z">
+<meta property="og:updated_time" content="2017-10-26T11:35:02.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c++基础复习">
 <meta name="twitter:description" content="c++基础日常">
@@ -196,6 +196,28 @@
 <li>当重载函数不是虚函数时，调用哪个版本的成员函数根据的是指针的类型。而当重载函数是虚函数是，调用哪个版本的函数根据的是指针所指向的对象的类型</li>
 <li>声明为纯虚函数<code>virtual type name() =0</code>不具备函数功能，不能被调用，必须在派生类中实例化</li>
 </ul>
+<h3 id="c-结构体"><a href="#c-结构体" class="headerlink" title="c++结构体"></a>c++结构体</h3><ul>
+<li>结构体可以包括变量与函数，默认为<code>public</code></li>
+<li>结构体允许嵌套使用，但是包含形式为结构体的指针</li>
+<li>结构体</li>
+</ul>
+<h3 id="c-typedef"><a href="#c-typedef" class="headerlink" title="c++ typedef"></a>c++ typedef</h3><ul>
+<li>使用方法1typedef existing_type new_type_name`</li>
+<li>typedef 并不创建新的类型，而是为现有类型添加一个同义字</li>
+</ul>
+<h3 id="c-空指针与错误指针"><a href="#c-空指针与错误指针" class="headerlink" title="c++ 空指针与错误指针"></a>c++ 空指针与错误指针</h3><ul>
+<li>指针未初始化给出的是错误的指针如<code>0xcccccc</code> <code>0xcdcdcdcd</code> </li>
+<li>空指针是<code>NULL</code>或者为0 所以两者并不相同！！！</li>
+</ul>
+<h3 id="c-内存分配"><a href="#c-内存分配" class="headerlink" title="c++ 内存分配"></a>c++ 内存分配</h3><p>c++程序的内存分为堆，栈，全局静态存储区，自由存储区</p>
+<ul>
+<li>堆（heap）：new的都存放在这里，属于动态分配，如果在程序中调用delete释放掉，那么将一直存在，直到程序结束，由程序释放掉。</li>
+<li>栈（stack）：由系统自动分配，形参和局部变量均存储在这里，函数退出时该栈自动销毁。</li>
+<li>全局/静态存储区：程序一开始执行即分配，生命周期持续到程序结束，存放全局变量，静态变量。</li>
+<li>自由存储区域：与堆的区别在于存放的是malloc的。</li>
+<li>常量存储区：顾名思义，存放常量的存储区。<br>调用函数时，<a href="http://www.cnblogs.com/ziyoudefeng/archive/2012/11/23/2785171.html" target="_blank" rel="external">栈变化过程</a></li>
+</ul>
+<p>简而言之，函数调用时将局部变量存入栈中，函数结束后并没有马上将栈清空，而是当下一个函数调用时才进行出栈操作。</p>
 
       
 
@@ -427,11 +449,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">english</a>
+                <a href="javascript:void(0)" class="js-tag color4">小功能</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小功能</a>
+                <a href="javascript:void(0)" class="js-tag color3">english</a>
               </li>
             
             <div class="clearfix"></div>
