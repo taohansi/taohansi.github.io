@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="tao hansi的博客">
 <meta property="og:description" content="c++基础日常">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-10-26T12:36:52.205Z">
+<meta property="og:updated_time" content="2017-10-26T13:01:58.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c++基础复习">
 <meta name="twitter:description" content="c++基础日常">
@@ -218,6 +218,12 @@
 <li>常量存储区：顾名思义，存放常量的存储区。<br>调用函数时，<a href="http://www.cnblogs.com/ziyoudefeng/archive/2012/11/23/2785171.html" target="_blank" rel="external">栈变化过程</a></li>
 </ul>
 <p>简而言之，函数调用时将局部变量存入栈中，函数结束后并没有马上将栈清空，而是当下一个函数调用时才进行出栈操作。</p>
+<h3 id="c-指针赋值"><a href="#c-指针赋值" class="headerlink" title="c++ 指针赋值"></a>c++ 指针赋值</h3><p>c++本身具有的赋值函数与拷贝构造函数对指针进行的操作是：</p>
+<ul>
+<li>申请一段新的内存空间</li>
+<li>将原来指针的地址赋值给该内存空间<br>所以得到的是两个不同的指针，不过指向向同的对象</li>
+</ul>
+<p>如果想将指针作为参数而有对本身去进行操作，应该是用指向该指针内存区域的指针，即使用指针的指针，这样就能对指针的内存空间进行操作。</p>
 
       
 
